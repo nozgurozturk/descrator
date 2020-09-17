@@ -1,0 +1,29 @@
+#root {
+    display: grid;
+    grid-template-columns: 240px auto;
+    & > nav {
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        border-right: 1px solid #eaeaea;
+        .tree{
+            margin-left:12px;
+        }
+        .input-wrapper{
+            border:none !important;
+        }
+        .nav-add {
+            margin-top:auto;
+        }
+    }
+
+    & > main {
+        height: calc(100vh - 32px);
+      
+        padding: 16px;
+        overflow-y: auto;
+    }
+}
+
+
+
