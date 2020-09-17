@@ -1,0 +1,376 @@
+{
+  "products": [
+    {
+      "id": "ad838274-408d-4ea2-8561-a55155529afc",
+      "text": "Yeni Urun",
+      "isFavorite": false,
+      "created": "2020-09-12T13:43:35.134Z",
+      "updated": "2020-09-14T20:01:59.892Z",
+      "themeId": "eb360297-30ae-4c56-b0c5-fbab80e5c22b"
+    },
+    {
+      "id": "20027fc7-a987-4172-8530-d96fc58b23fd",
+      "text": "Test Urunu",
+      "themeId": "a279c63f-a82a-4ffd-be40-86498ec0f101",
+      "isFavorite": false,
+      "created": "2020-09-15T08:23:37.306Z",
+      "updated": "2020-09-17T06:30:58.922Z"
+    }
+  ],
+  "sections": [
+    {
+      "productId": "ad838274-408d-4ea2-8561-a55155529afc",
+      "text": "Urun Aciklamasi",
+      "id": "f65afd06-f282-423a-b112-501beec672aa",
+      "created": "2020-09-12T13:50:08.049Z",
+      "updated": null
+    },
+    {
+      "productId": "20027fc7-a987-4172-8530-d96fc58b23fd",
+      "text": "Bolum 1",
+      "id": "b8eef0b6-6b8e-4f04-8ccd-c3372a881698",
+      "created": "2020-09-15T08:23:56.015Z",
+      "updated": null
+    },
+    {
+      "productId": "20027fc7-a987-4172-8530-d96fc58b23fd",
+      "text": "Bolum 3",
+      "id": "742df410-1090-48f4-ae63-67ea17353036",
+      "created": "2020-09-15T08:24:07.760Z",
+      "updated": null
+    },
+    {
+      "productId": "20027fc7-a987-4172-8530-d96fc58b23fd",
+      "text": "Bolum 4",
+      "id": "abcb759d-b783-4966-bc2e-cf8287b14d1e",
+      "created": "2020-09-15T08:24:18.384Z",
+      "updated": null
+    }
+  ],
+  "descriptions": [
+    {
+      "sectionId": "f65afd06-f282-423a-b112-501beec672aa",
+      "text": "Aciklama 1",
+      "id": "de645386-1621-4f9f-a74f-a2b4c492f90e",
+      "created": "2020-09-12T13:50:12.321Z",
+      "updated": null
+    },
+    {
+      "sectionId": "f65afd06-f282-423a-b112-501beec672aa",
+      "text": "Aciklama 2",
+      "id": "ba3b0f03-9adb-45d2-970e-5153d378b018",
+      "created": "2020-09-12T13:50:14.911Z",
+      "updated": null
+    },
+    {
+      "sectionId": "f65afd06-f282-423a-b112-501beec672aa",
+      "text": "Aciklama 3",
+      "id": "ca8cc917-2b2e-4cb5-85c1-eba77e5bacef",
+      "created": "2020-09-12T13:50:19.431Z",
+      "updated": null
+    },
+    {
+      "sectionId": "b8eef0b6-6b8e-4f04-8ccd-c3372a881698",
+      "text": "Aciklama 1",
+      "id": "f53b5472-fd98-4300-b0c9-4c9e0f7158c3",
+      "created": "2020-09-15T08:23:58.967Z",
+      "updated": null
+    },
+    {
+      "sectionId": "b8eef0b6-6b8e-4f04-8ccd-c3372a881698",
+      "text": "Aciklam 2",
+      "id": "c077c566-8671-4cf2-bfa9-22312a6d17f5",
+      "created": "2020-09-15T08:24:01.768Z",
+      "updated": null
+    },
+    {
+      "sectionId": "b8eef0b6-6b8e-4f04-8ccd-c3372a881698",
+      "text": "Aciklama 3",
+      "id": "33dbc745-eaa6-474d-8d04-e752737e4071",
+      "created": "2020-09-15T08:24:04.719Z",
+      "updated": null
+    },
+    {
+      "sectionId": "742df410-1090-48f4-ae63-67ea17353036",
+      "text": "Aciklama 1",
+      "id": "c0313b06-b5cb-4f48-8f30-4f974b29294f",
+      "created": "2020-09-15T08:24:11.472Z",
+      "updated": null
+    },
+    {
+      "sectionId": "742df410-1090-48f4-ae63-67ea17353036",
+      "text": "Aciklama 2",
+      "id": "a842f4c6-f409-4608-bd99-81fc6090dc4a",
+      "created": "2020-09-15T08:24:14.806Z",
+      "updated": null
+    },
+    {
+      "sectionId": "abcb759d-b783-4966-bc2e-cf8287b14d1e",
+      "text": "Aciklama 1",
+      "id": "8307a6fe-2a02-48a4-bd21-5e069a51515f",
+      "created": "2020-09-15T08:24:21.720Z",
+      "updated": null
+    },
+    {
+      "sectionId": "abcb759d-b783-4966-bc2e-cf8287b14d1e",
+      "text": "Aciklama 2",
+      "id": "8e835832-9743-4039-9f4d-b33ce7f293ce",
+      "created": "2020-09-15T08:24:26.047Z",
+      "updated": null
+    }
+  ],
+  "themes": [
+    {
+      "id": "eb360297-30ae-4c56-b0c5-fbab80e5c22b",
+      "name": "Yeni Tema 2",
+      "productTitle": {
+        "color": {
+          "backgroundColor": "#ffffff",
+          "foregroundColor": "#6b2edc"
+        },
+        "font": {
+          "fontWeight": "bold",
+          "fontSize": 24,
+          "align": "left"
+        },
+        "spacing": {
+          "margin": {
+            "top": 0,
+            "right": 0,
+            "bottom": 8,
+            "left": 0
+          },
+          "padding": {
+            "top": 12,
+            "right": 0,
+            "bottom": 12,
+            "left": 0
+          }
+        }
+      },
+      "section": {
+        "color": {
+          "backgroundColor": "#ffffff",
+          "foregroundColor": "#007bff"
+        },
+        "font": {
+          "fontWeight": "normal",
+          "fontSize": 22,
+          "align": "left"
+        },
+        "spacing": {
+          "margin": {
+            "top": 0,
+            "right": 0,
+            "bottom": 0,
+            "left": 0
+          },
+          "padding": {
+            "top": 8,
+            "right": 0,
+            "bottom": 4,
+            "left": 8
+          }
+        }
+      },
+      "description": {
+        "color": {
+          "foregroundColor": "#000000"
+        },
+        "font": {
+          "fontWeight": "lighter",
+          "fontSize": 18,
+          "align": "left"
+        },
+        "list": {
+          "bullet": "none"
+        },
+        "spacing": {
+          "margin": {
+            "top": 0,
+            "right": 0,
+            "bottom": 0,
+            "left": 0
+          },
+          "padding": {
+            "top": 0,
+            "right": 0,
+            "bottom": 0,
+            "left": 16
+          }
+        }
+      },
+      "created": "2020-09-14T19:13:22.237Z",
+      "updated": "2020-09-15T21:42:43.578Z"
+    },
+    {
+      "id": "549c6791-db9d-4420-8118-0c862bdb8136",
+      "name": "Tema Ismi 2",
+      "productTitle": {
+        "color": {
+          "foregroundColor": "#ff0000",
+          "backgroundColor": "#c37979"
+        },
+        "font": {
+          "fontSize": 21,
+          "fontWeight": "bold",
+          "align": "right"
+        },
+        "spacing": {
+          "padding": {
+            "top": 6,
+            "right": 0,
+            "bottom": 0,
+            "left": 0
+          },
+          "margin": {
+            "top": 0,
+            "right": 0,
+            "bottom": 0,
+            "left": 0
+          }
+        }
+      },
+      "section": {
+        "color": {
+          "foregroundColor": "#ff0505",
+          "backgroundColor": ""
+        },
+        "font": {
+          "fontSize": 23,
+          "fontWeight": "lighter",
+          "align": "center"
+        },
+        "spacing": {
+          "padding": {
+            "top": 9,
+            "right": 0,
+            "bottom": 0,
+            "left": 0
+          },
+          "margin": {
+            "top": 0,
+            "right": 0,
+            "bottom": 0,
+            "left": 0
+          }
+        }
+      },
+      "description": {
+        "color": {
+          "foregroundColor": "#15c168",
+          "backgroundColor": ""
+        },
+        "font": {
+          "fontSize": 12,
+          "fontWeight": "bold",
+          "align": "left"
+        },
+        "list": {
+          "bullet": "none"
+        },
+        "spacing": {
+          "padding": {
+            "top": 0,
+            "right": 0,
+            "bottom": 0,
+            "left": 0
+          },
+          "margin": {
+            "top": 0,
+            "right": 0,
+            "bottom": 0,
+            "left": 0
+          }
+        }
+      },
+      "created": "2020-09-16T14:12:33.269Z",
+      "updated": null
+    },
+    {
+      "id": "a279c63f-a82a-4ffd-be40-86498ec0f101",
+      "name": "Tema 5",
+      "productTitle": {
+        "color": {
+          "foregroundColor": "#ff0505",
+          "backgroundColor": ""
+        },
+        "font": {
+          "fontSize": 48,
+          "fontWeight": "lighter",
+          "align": "left"
+        },
+        "spacing": {
+          "padding": {
+            "top": 0,
+            "right": 0,
+            "bottom": 0,
+            "left": 0
+          },
+          "margin": {
+            "top": 0,
+            "right": 0,
+            "bottom": 0,
+            "left": 0
+          }
+        }
+      },
+      "section": {
+        "color": {
+          "foregroundColor": "#1c9eb5",
+          "backgroundColor": ""
+        },
+        "font": {
+          "fontSize": 32,
+          "fontWeight": "bold",
+          "align": "left"
+        },
+        "spacing": {
+          "padding": {
+            "top": 0,
+            "right": 0,
+            "bottom": 0,
+            "left": 0
+          },
+          "margin": {
+            "top": 0,
+            "right": 0,
+            "bottom": 0,
+            "left": 0
+          }
+        }
+      },
+      "description": {
+        "color": {
+          "foregroundColor": "#17b021",
+          "backgroundColor": ""
+        },
+        "font": {
+          "fontSize": 12,
+          "fontWeight": "bold",
+          "align": "left"
+        },
+        "list": {
+          "bullet": "none"
+        },
+        "spacing": {
+          "padding": {
+            "top": 2,
+            "right": 0,
+            "bottom": 2,
+            "left": 12
+          },
+          "margin": {
+            "top": 0,
+            "right": 0,
+            "bottom": 0,
+            "left": 0
+          }
+        }
+      },
+      "created": "2020-09-17T06:30:40.277Z",
+      "updated": null
+    }
+  ],
+  "banners": []
+}
