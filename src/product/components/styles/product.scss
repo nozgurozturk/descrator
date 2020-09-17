@@ -1,0 +1,36 @@
+.product {
+    &--item {
+        position: relative;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        &__menu {
+            position: absolute;
+            top:0;
+            right:0;
+            display: flex;
+            flex-direction: column;
+            z-index: 99;
+        }
+        &__input {
+            width: 80%;
+            font-size: 24px;
+            textarea {
+                font-weight: 600;
+                border:none;
+                resize: none;
+            }
+        }
+    }
+    &--new {
+        font-size: 24px;
+        &__input{
+            width: 80%;
+            margin-top: 16px;
+            margin-left: 40px;
+            border:none;
+            resize: none;
+            border-bottom: 1px solid #eaeaea;
+        }
+    }
+}
