@@ -134,15 +134,15 @@ function ProductItem({ product, ...props }: ProductItemProps) {
         const sectionTitleStyle = new Style({ ...rawProduct.theme?.section })
         const descriptionStyle = new Style({ ...rawProduct.theme?.description })
 
-        let htmlString = `<div style="${productTitleStyle.createCssString()}">${rawProduct.productTitle}</div>`
+        let htmlString = `<h1 style="${productTitleStyle.createCssString()}">${rawProduct.productTitle}</h1>`
 
         rawProduct.sections.forEach((s: any) => {
-            htmlString += `<div><div style="${sectionTitleStyle.createCssString()}">${s.title}</div>`
+            htmlString += `<section><h4 style="${sectionTitleStyle.createCssString()}">${s.title}</h4>`
             htmlString += '<ul>'
             s.descriptions.forEach((d: any) => {
                 htmlString += `<li style="${descriptionStyle.createCssString()}">${d}</li>`
             })
-            htmlString += '</ul></div>'
+            htmlString += '</ul></section>'
         })
 
         return htmlString

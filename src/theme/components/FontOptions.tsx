@@ -9,11 +9,18 @@ interface IFontOptionProps {
     dispatch: any
 }
 
+// TODO: Refactor with useReducer
+
 function FontOptions({state, dispatch, ...props }:IFontOptionProps) {
     const [weight, setWeight] = useState<string>(state.fontWeight || 'normal')
     const [size, setSize] = useState<number >(state.fontSize || 12)
     const [align, setAlign] = useState<string>(state.align || 'left')
 
+    useEffect(() => {
+        setWeight(() => state.fontWeight || 'normal')
+        setSize(() => state.fontSize || 12)
+        setAlign(() => state.align || 'left')
+    }, [state])
 
     useEffect(() => {
         dispatch({

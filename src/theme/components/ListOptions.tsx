@@ -8,9 +8,13 @@ interface IListOptionsProps {
     dispatch: any
 }
 
+// TODO: Refactor with useReducer
+
 function ListOptions({ state, dispatch, ...props }: IListOptionsProps) {
     const [bullet, setBullet] = useState<string>(state.bullet || '')
-
+    useEffect(() => {
+        setBullet(() => state.bullet || '')
+    }, [state])
     useEffect(() => {
         dispatch({ bullet: bullet })
     }, [bullet])

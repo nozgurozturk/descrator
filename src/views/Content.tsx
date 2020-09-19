@@ -1,4 +1,4 @@
-import React, { ReactNode, useEffect, useState } from 'react'
+import React, { ReactNode, useEffect, useState,  } from 'react'
 import DescriptionList from '../description/components/DescriptionList'
 import ProductItem from '../product/components/ProductItem';
 import ProductNew from '../product/components/ProductNew';
@@ -19,14 +19,12 @@ function Content({ selectedContent, children, ...props }: Content) {
     const [type, setType] = useState<string>('')
     const [content, setContent] = useState<any>(null)
 
-    const onHandleContentChange = ({ type, payload }: any) => {
-        setType(type)
-        setContent(payload)
-    }
-
     useEffect(() => {
-        eventEmitter.on(events.content, onHandleContentChange)
-    }, [onHandleContentChange])
+        eventEmitter.on(events.content, ({ type, payload }: any) => {
+            setType(() => type)
+            setContent(() => payload)
+        })
+    }, [])
 
     return (
         <main>

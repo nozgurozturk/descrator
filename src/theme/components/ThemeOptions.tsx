@@ -12,15 +12,14 @@ import ListOptions from './ListOptions'
 import { IListStyle } from '../../styles/ListStyles'
 
 interface IThemeOptionsProps {
-    states: IStyle,
+    states: Partial<IStyle>,
     type: string,
     dispatcher: any,
     sample: ReactNode
 }
 
 function ThemeOptions({ states, dispatcher, sample, type, ...props }: IThemeOptionsProps) {
-
-
+    
     const createStyleObject = (style: IStyle): CSSProperties => {
         return {
             color: style.color?.foregroundColor,
@@ -37,6 +36,7 @@ function ThemeOptions({ states, dispatcher, sample, type, ...props }: IThemeOpti
 
         <section className="theme--options">
             <div>
+                
                 <ColorOptions state={states.color!} dispatch={(value: IColorStyle) => dispatcher({
                     type, payload: {
                         ...states,

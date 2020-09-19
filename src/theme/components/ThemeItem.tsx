@@ -11,14 +11,23 @@ interface IThemeItemProps {
     theme: ITheme
 }
 
-type ActionType = 'description' | 'productTitle' | 'section'
+type ActionType = 'description' | 'productTitle' | 'section' | 'all'
+type ActionPayload = Partial<IStyle>
 
 type ReducerAction = {
     type: ActionType
-    payload: Partial<IStyle>
+    payload: ActionPayload
 }
 
-function themeReducer(state: Pick<ITheme, "description" | "productTitle" | "section">, action: ReducerAction): Pick<ITheme, "description" | "productTitle" | "section"> {
+function initializeState(theme:Pick<ITheme, "description" | "productTitle" | "section">): Partial<Pick<ITheme, "description" | "productTitle" | "section">>  {
+    return {
+        description:theme.description,
+        productTitle:theme.productTitle,
+        section:theme.section
+    }
+}
+
+function themeReducer(state: Partial<Pick<ITheme, "description" | "productTitle" | "section">>, action: ReducerAction): Partial<Pick<ITheme, "description" | "productTitle" | "section">>  {
     switch (action.type) {
         case 'description':
             return {
@@ -35,6 +44,11 @@ function themeReducer(state: Pick<ITheme, "description" | "productTitle" | "sect
                 ...state,
                 section: action.payload
             }
+        case 'all':
+            return {
+                ...state,
+                ...action.payload
+            }
         default:
             return state
     }
@@ -42,21 +56,15 @@ function themeReducer(state: Pick<ITheme, "description" | "productTitle" | "sect
 
 function ThemeItem({ theme, ...props }: IThemeItemProps) {
 
-    // const initialThemeState: Pick<ITheme, "description" | "productTitle" | "section"> = {
-    //     description: theme.description,
-    //     productTitle: theme.productTitle,
-    //     section: theme.section
-    // }
-    const [name, setName] = useState<string>(theme.name)
-    const memoizedThemeReducer = useCallback((state: Pick<ITheme, "description" | "productTitle" | "section">, action: ReducerAction) => themeReducer(state, action), [theme])
-    const memoizedInitialThemeState: Pick<ITheme, "description" | "productTitle" | "section"> = useMemo(() => {
-        return {
+    const initialThemeState:Pick<ITheme, "description" | "productTitle" | "section"> = {
             description: theme.description,
             productTitle: theme.productTitle,
             section: theme.section
-        }
-    }, [theme])
-    const [state, dispatch] = useReducer(memoizedThemeReducer, memoizedInitialThemeState)
+    } 
+    const { name, description, section, productTitle } = theme
+    const [themeName, setThemeName] = useState<string>('')
+    const memoizedThemeReducer = useCallback((state: Partial<Pick<ITheme, "description" | "productTitle" | "section">>, action: ReducerAction) => themeReducer(state, action), [name, description, section, productTitle ])
+    const [state, dispatch] = useReducer(memoizedThemeReducer, initialThemeState, initializeState)
 
     const updateTheme = async () => {
         try {
@@ -64,7 +72,7 @@ function ThemeItem({ theme, ...props }: IThemeItemProps) {
             if (!result) {
                 throw new Error('Theme is not updated')
             }
-            eventEmitter.emit(events.listAllThemes)
+            
         } catch (error) {
             console.error(error)
         }
@@ -79,6 +87,12 @@ function ThemeItem({ theme, ...props }: IThemeItemProps) {
         }
     }
 
+    useEffect(() => {
+        dispatch({type:"section", payload: section})
+        dispatch({type: 'productTitle', payload: productTitle})
+        dispatch({type:"description", payload: description}) 
+    },[theme]) 
+    
     return (
         <div className="theme--new">
             <div className="theme--menu">
@@ -91,21 +105,21 @@ function ThemeItem({ theme, ...props }: IThemeItemProps) {
                 className="theme--input"
                 placeholder="Tema Ismi"
                 rows={1}
-                value={name}
-                onChange={({ target: { value } }) => setName(value)}
+                value={themeName || name}
+                onChange={({ target: { value } }) => setThemeName(value)}
             />
-            <Tabs initialValue="1">
+            <Tabs  initialValue="1">
                 <Tabs.Item label="Urun Ismi" value="1">
                     <ThemeOptions
-                        states={state.productTitle}
+                        states={state.productTitle || productTitle}
                         type="productTitle"
                         dispatcher={dispatch}
                         sample={<div>Ornek Urun Ismi</div>}
                     />
                 </Tabs.Item>
-                <Tabs.Item label="Baslik" value="2">
+                <Tabs.Item  label="Baslik" value="2">
                     <ThemeOptions
-                        states={state.section}
+                        states={state.section || section}
                         type="section"
                         dispatcher={dispatch}
                         sample={<div>Ornek Baslik</div>}
@@ -113,7 +127,7 @@ function ThemeItem({ theme, ...props }: IThemeItemProps) {
                 </Tabs.Item>
                 <Tabs.Item label="Aciklama" value="3">
                     <ThemeOptions
-                        states={state.description}
+                        states={state.description || description}
                         type="description"
                         dispatcher={dispatch}
                         sample={[...Array(5)].map((i, index) => (<li key={index}>Ornek Aciklama</li>))}

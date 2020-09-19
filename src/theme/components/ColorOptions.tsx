@@ -7,11 +7,16 @@ interface IColorOptionsProps {
     state: IColorStyle
     dispatch: any
 }
+// TODO: Refactor with useReducer
 
 function ColorOptions({ state, dispatch, ...props }: IColorOptionsProps) {
     const [foregroundColor, setForegroundColor] = useState<string | undefined >(state.foregroundColor || undefined)
     const [backgroundColor, setBackgroundColor] = useState<string | undefined>(state.backgroundColor || undefined)
 
+    useEffect(() => {
+        setBackgroundColor(() => state.backgroundColor)
+        setForegroundColor(() => state.foregroundColor)
+    }, [state])
 
     useEffect(() => {
         dispatch({ backgroundColor: backgroundColor, foregroundColor: foregroundColor })
